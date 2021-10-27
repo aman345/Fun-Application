@@ -1,5 +1,6 @@
 # Fun Python scripts and application 
- ToDO application using tkinter
- Sticky notes using tkinter
- Encrypt and decrypt files for directory
+
+1. ToDO application using tkinter
+2. Sticky notes using tkinter
+3. Encrypt and decrypt files for directory
  
