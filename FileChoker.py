@@ -8,9 +8,6 @@ class FileEnCrypterAndDecrypter:
 
     def __init__(self, wd):
         self.wd = wd+"/"
-        self.working_directory = wd+"/encodedfiles/"
-        os.makedirs(self.working_directory,exist_ok=True)
-        os.chdir(self.working_directory)
         self.keys_file = self.wd+'filechockers.key'
         
     def encrypt(self, filename):
@@ -20,7 +17,7 @@ class FileEnCrypterAndDecrypter:
             file_data = file.read()
         encrypted_data = f.encrypt(file_data)
 
-        with open(self.working_directory+filename, 'wb') as file:
+        with open(self.wd+filename, 'wb') as file:
             file.write(encrypted_data)
         
         with open(self.keys_file, 'a') as f:
@@ -34,12 +31,12 @@ class FileEnCrypterAndDecrypter:
         key  =ast.literal_eval(key)
         f = Fernet(key)
 
-        with open(self.working_directory+filename, 'rb') as file:
+        with open(self.wd+filename, 'rb') as file:
             data = file.read()
 
         decryptdata = f.decrypt(data)
 
-        with open(self.working_directory+filename, 'wb') as file:
+        with open(self.wd+filename, 'wb') as file:
             file.write(decryptdata)
     
     def search(self,filename):
@@ -58,12 +55,8 @@ class FileEnCrypterAndDecrypter:
                 self.encrypt(f)      
             if func=='dec':
                 self.decrypt(f)
-        if func=='enc':
-               #need to change directory 
-               os.chdir(self.wd)
-               shutil.make_archive("compressedFiles",'zip', self.wd+"encodedfiles")
-               #after completion of process again there is need to change the directory 
-               os.chdir(self.working_directory)
+        if func=='dec':
+            os.remove(self.keys_file) 
 if __name__ =="__main__":
     filen = []
     fd = 'path to file directory'
