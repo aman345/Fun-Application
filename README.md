@@ -4,5 +4,5 @@
 2. Sticky notes using tkinter
 3. Encrypt and decrypt files for directory
 4. Weather Widget
-
+5. Resource Grabber (Cpu,Ram,Gpu(in progress)) 
  
