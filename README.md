@@ -6,3 +6,4 @@
 4. Weather Widget
 5. Resource Grabber (Cpu,Ram,Gpu(in progress)) 
  
+#Open for code reviews and suggestions
