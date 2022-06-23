@@ -5,5 +5,6 @@
 3. Encrypt and decrypt files for directory
 4. Weather Widget
 5. Resource Grabber (Cpu,Ram,Gpu(in progress)) 
+6. Simple Counter Widget
  
 #Open for code reviews and suggestions
